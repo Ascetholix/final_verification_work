@@ -16,6 +16,15 @@ void PrintArray(string[] arg)
   }
 }
 
+void FillArray(string[] arg)
+{
+  for (int i = 0; i < arg.Length; i++)
+  { 
+    Console.WriteLine($"Ввдите {i+1} элемент массива");
+    arg[i] = Console.ReadLine();
+  }
+}
+
 int LengthArray(string[] arg)
 {
   int cout = 0;
@@ -46,8 +55,13 @@ string[] CopyArray(string[] arg, string[] arg1)
   return arg1;
 }
 
+Console.Write("Введите длину массива: ");
+int lenArray = Convert.ToInt32(Console.ReadLine());
 
-string[] firstArray = { "hello", "2", "world", ":-)" };
+string[] firstArray = new string[lenArray];
+FillArray(firstArray);
+Console.WriteLine();
+
 string[] secondArray = new string[LengthArray(firstArray)];
 
 secondArray = CopyArray(firstArray, secondArray);
