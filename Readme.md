@@ -21,7 +21,21 @@ void FillArray(string[] arg)
   }
 }
 ```
-обявление второго массива c длина котрого функция первого массива с элементами меньше или равно 3. 
+обявление второго массива, длина котрого функция первого массива с элементами меньше или равно 3. 
+```C#
+int LengthArray(string[] arg)
+{
+  int cout = 0;
+  for (int i = 0; i < arg.Length; i++)
+  {
+    if (arg[i].Length <= 3)
+    {
+      cout++;
+    }
+  }
+  return cout;
+}
+```
 ```C#
 string[] secondArray = new string[LengthArray(firstArray)];
 ```
